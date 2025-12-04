@@ -1,0 +1,256 @@
+/* style.css - Universal Styles (Reset, Header/Nav Structure, Common Components, Footer) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+/* --- Variables and General Reset --- */
+:root {
+    --primary-color: #f7f7f7; /* Light Gray Base (General BG) */
+    --secondary-color: #e0e0e0; /* Slightly Darker Gray (Header BG, Card BG Snippets) */
+    --accent-color: #000000; /* Deep Teal Accent */
+    --text-color: #333;
+    --light-text: #fff;
+    --font-family-primary:'Poppins', sans-serif;
+    --font-family-secondary: 'Georgia', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* -------------------------------------- */
+/* --- 1. HEADER & NAVIGATION STRUCTURE --- */
+/* -------------------------------------- */
+
+header {
+    /* 1. Make the background semi-transparent using rgba */
+    background-color: rgba(255, 255, 255, 0.85); /* Changed from #e1e1e1 to rgba */
+    
+    /* 2. Apply the blur effect to the background content */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); /* For Safari support */
+    
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.09); /* Slightly increased shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    /* Layout: Logo (Left) | Nav (Center) | Contact (Right) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.2em, 2.5vw, 1.2em);
+    color: black;
+}
+
+/* Placeholder for image/logo-specific size */
+.logo-placeholder {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+header .logo img { /* Kept in case you use an <img> tag later */
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* Center Navigation Container */
+.center-nav {
+    flex-grow: 1; 
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centers the links */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Adjust spacing */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    /* Hover line code is intentionally REMOVED from this final version */
+}
+
+.nav-links a:hover {
+    color: #9c9c9c;
+}
+
+.nav-links a.active {
+    color: var(--accent-color); /* Deep Teal color */
+    font-weight: 700; /* Makes the active link bolder */
+}
+
+
+/* Contact Button (Right) */
+.contact-button-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-contact {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #404040;
+    color: white;
+}
+
+
+/* Hamburger Menu (for mobile) */
+.menu-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+footer {
+    background-color: #333;
+    color: var(--light-text);
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-section p, .footer-section a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: var(--light-text);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    margin-top: 20px;
+}
+
+/* -------------------------------------- */
+/* --- 4. GLOBAL MOBILE STYLES --- */
+/* -------------------------------------- */
+
+@media (max-width: 850px) {
+    .header-content {
+        padding: 15px 20px;
+        /* Ensure space-between still works on mobile */
+        justify-content: space-between; 
+    }
+
+    .center-nav {
+        /* This whole nav container needs to be hidden normally on mobile */
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* When active (triggered by JavaScript), display flex */
+    .center-nav.active { 
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

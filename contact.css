@@ -1,0 +1,234 @@
+/* about.css - Contact Page Specific Styles */
+
+/* --- General Contact Page Styling --- */
+
+#contact-page {
+    /* Set the container to align properly for the whole page */
+    padding: 80px 0; 
+}
+
+.contact-header-section {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.small-title {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.contact-header-section h1 {
+    /* Responsive font size for the main header */
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    font-weight: 800;
+    color: black; /* Darker text for high contrast title */
+}
+
+.subtitle-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: -5px;
+    margin-bottom: 100px;
+}
+
+
+/* --- Main Contact Grid Layout --- */
+
+.contact-grid {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start; /* Aligns content to the top */
+}
+
+/* --- 1. Contact Form Container (Left Side) --- */
+
+.contact-form-container {
+    flex: 1.5; /* Takes up more space than the info block */
+    min-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.contact-form-container textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.terms-checkbox input {
+    margin-right: 10px;
+}
+
+.terms-checkbox a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.send-request-btn {
+    width: 100%;
+    background-color: #333; /* Darker background for the button */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-request-btn:hover {
+    background-color: var(--accent-color); /* Teal hover */
+}
+
+/* --- 2. Contact Info Container (Right Side) --- */
+
+.contact-info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-info-container h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Service List Block */
+.service-list-block ul {
+    list-style: none;
+}
+
+.service-list-block li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.service-list-block li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    margin-top: 4px; /* Align icon slightly better with text */
+    font-size: 1.1em;
+}
+
+/* Address Block */
+.address-block {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.location {
+    flex: 1;
+}
+
+.location i {
+    color: #555;
+    margin-right: 5px;
+}
+
+.location h4 {
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.location p {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #777;
+}
+
+/* Direct Contact Block */
+.direct-contact-block {
+    padding-top: 10px;
+}
+
+.contact-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.contact-link i {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* --- Mobile Responsiveness --- */
+
+@media (max-width: 900px) {
+    .contact-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-info-container {
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+
+    .address-block {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-form-container {
+        min-width: unset;
+    }
+}

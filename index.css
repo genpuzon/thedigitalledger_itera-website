@@ -1,0 +1,310 @@
+/* index.css - Homepage Specific Styles (Content Only) */
+
+/* --- Hero Section (Homepage) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background-color: white; /* Use secondary color or your gradient */
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 160px 0;
+    
+    background: 
+        /* 1. OPACITY MASK (Top Layer): Fades from fully transparent to fully opaque.
+           This mask allows the texture to disappear only near the top edge. */
+        linear-gradient(
+            180deg, /* Gradient direction: Top (0%) to Bottom (100%) */
+            rgba(255, 255, 255, 1) 0%,   /* Fully solid white at the top (hides texture) */
+            rgba(255, 255, 255, 1) 5%,   /* Fully solid white at the top (hides texture) */
+            rgba(255, 255, 255, 0.0) 100% /* Remains transparent to the bottom */
+        ),
+
+        /* 2. TEXTURE IMAGE: The grainy texture repeats */
+        url('images/BackgroundTexture.svg') repeat, 
+        
+        /* 3. COLOR GRADIENT (Bottom Layer): The base color transition */
+        linear-gradient(
+            180deg, 
+            #e1e1e1 0%, 
+            #ffffff 100% 
+        );
+
+    background-size: auto, auto, cover;
+    /* Ensure the background covers the entire area */
+    background-size: auto, cover; 
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 6em;
+    margin-bottom: 90px;
+    color: black;
+    /* High-impact modern sans-serif stack */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 650; /* Use a very heavy weight for 'Discover Latest Articles' */
+    letter-spacing: -1mm;
+    line-height: 1.0;
+}
+
+/*.hero p {
+    font-size: 1em;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+*/
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #404040;
+    transform: translateY(-2px);
+}
+
+/* --- Featured Articles Section (Homepage) --- */
+#featured-articles {
+    padding: 50px 0 80px;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+#featured-articles h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    position: relative;
+}
+
+#featured-articles h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+.article-card {
+    /* Existing styles... */
+    background-color: var(--light-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* ADD THIS to make the card structure flexible */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Forces card to fill the grid cell height */
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+
+.caption-snippet {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: auto; /* This MAGICALLY pushes the grey box to the bottom */
+    font-style: italic;
+    border-left: 3px solid var(--accent-color);
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+/*dagdag*/
+
+#content-difference {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#content-difference h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.difference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.difference-card {
+    padding: 30px 20px;
+    border-radius: 8px;
+    background-color: var(--light-text);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.difference-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.difference-card i {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.difference-card h4 {
+    font-size: 1.3em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.difference-card p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/*isa pang bago*/
+
+#newsletter-cta {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-box {
+    background-color: var(--secondary-color); /* Light gray background */
+    padding: 50px 30px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-box h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cta-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cta-form input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 100%;       
+    max-width: 350px;   
+}
+
+.cta-form button {
+    /* Inherits btn-primary styles */
+    padding: 12px 25px;
+}
+
+@media (max-width: 850px) {
+    .header-content {
+        padding: 10px 15px; /* Reduce padding to save space */
+        justify-content: space-between;
+        gap: 10px; /* Add a small gap between items so they don't touch */
+    }
+
+    /* 1. Shrink the Logo text on mobile so it doesn't push everything else off */
+    .logo h2 {
+        font-size: 1rem; /* Smaller font size for mobile */
+        white-space: nowrap; /* Keep it on one line */
+    }
+
+    .logo img {
+        width: 30px; /* Slightly smaller logo icon */
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    /* 2. Hide the "Contact" button on very small screens to save space */
+    /* (The hamburger menu usually contains the links anyway) */
+    .btn-contact {
+        display: none; 
+    }
+    
+    /* OR if you want to keep the contact button, make it smaller: */
+    /*
+    .btn-contact {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    */
+
+    .menu-toggle {
+        font-size: 1.5em; /* Adjust hamburger size */
+        margin-left: auto; /* Push it to the right if needed */
+        display: block;
+    }
+}
+/*gang dito*/
+
+/* Mobile adjustments specific to index.html */
+@media (max-width: 850px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero h1 {
+        font-size: 2.5em;       
+        letter-spacing: normal; 
+        line-height: 1.2;       
+        padding: 0 15px;        
+    }
+}

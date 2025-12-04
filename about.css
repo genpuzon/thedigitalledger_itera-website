@@ -1,0 +1,171 @@
+/* about.css - About Us Page Specific Styles */
+
+.about-header {
+    background-color: var(--secondary-color);
+    padding: 80px 0 2px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    background: 
+        /* 1. OPACITY MASK (Top Layer): Fades from fully transparent to fully opaque.
+           This mask allows the texture to disappear only near the top edge. */
+        linear-gradient(
+            180deg, /* Gradient direction: Top (0%) to Bottom (100%) */
+            rgba(255, 255, 255, 1) 0%,   /* Fully solid white at the top (hides texture) */
+            rgba(255, 255, 255, 1) 5%,   /* Fully solid white at the top (hides texture) */
+            rgba(255, 255, 255, 0.0) 100% /* Remains transparent to the bottom */
+        ),
+
+        /* 2. TEXTURE IMAGE: The grainy texture repeats */
+        url('images/BackgroundTexture.svg') repeat, 
+        
+        /* 3. COLOR GRADIENT (Bottom Layer): The base color transition */
+        linear-gradient(
+            180deg, 
+            #e1e1e1 0%, 
+            #ffffff 100% 
+        );
+
+    background-size: auto, auto, cover;
+    /* Ensure the background covers the entire area */
+    background-size: auto, cover; 
+}
+
+.about-header h1 {
+    color: var(--accent-color);
+    font-size: clamp(2.5rem, 6vw, 5em);
+    margin-top: 10px;
+}
+
+.about-header p{
+    margin: 0 0 100px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 0px 0 100px;
+    color: var(--text-color);
+    padding: 0px;
+}
+
+.mission-vision-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.mission-vision-card {
+    flex: 1;
+    background-color: var(--light-text);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: justify;
+
+}
+
+.mission-vision-card h3 {
+    font-size: 1.8em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+.value-pillars {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.value-pillars h2{
+    font-size: 3em;
+    padding: 30px;
+}
+
+.pillar-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.pillar-card {
+    flex: 1;
+    background-color: #eaeaea;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.pillar-card:hover {
+    background-color: #444444;
+    color: white;
+}
+
+.audience-section h2{
+    font-size: 3em;
+    text-align: center;
+    padding: 30px;
+}
+
+.audience-section p{
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/* --- Contact Section (on About Us page) --- */
+#container-contact {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-section {
+    background-color: var(--secondary-color);
+    padding: 50px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 80px;
+}
+
+.contact-section h2 {
+    color: var(--accent-color);
+    font-size: clamp(2rem, 5vw, 4em);
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    flex-wrap: wrap;
+}
+
+.contact-details i{
+    padding-bottom: 15px;
+}
+
+.contact-item {
+    padding: 20px;
+}
+
+/* Mobile adjustments specific to about.html */
+@media (max-width: 850px) {
+    .mission-vision-section {
+        flex-direction: column;
+    }
+
+    .pillar-grid {
+        flex-direction: column;
+    }
+
+    .contact-details {
+        flex-direction: column;
+    }
+}

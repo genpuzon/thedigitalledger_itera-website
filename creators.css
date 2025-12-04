@@ -1,0 +1,262 @@
+/* creators.css - Creators Page Specific Styles (High-Fidelity Card Design) */
+
+#creators-section {
+    padding: 60px 0 100px;
+    text-align: center;
+}
+
+.creators-intro {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.creators-intro h1 {
+    /* Responsive font size for the main heading */
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.creators-intro p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* --- Main Grid Layout --- */
+.creators-grid-wrapper {
+    display: grid;
+    /* 2 columns on desktop, responsive stacking */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+    gap: 40px;
+}
+
+/* --- Individual Creator Card --- */
+.creator-card-item {
+    background-color: var(--light-text);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.creator-card-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.30);
+}
+
+
+/* --- Top Section: Image and Metadata (Flexbox) --- */
+.creator-top-info {
+    display: flex;
+    align-items: center; /* Vertically center the text beside the image */
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.creator-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px;
+    border: 3px solid var(--accent-color); /* Teal highlight border */
+}
+
+.creator-metadata {
+    text-align: left;
+}
+
+.creator-metadata h3 {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.role-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--accent-color); /* Highlight role in teal */
+    margin-bottom: 5px;
+}
+
+.academic-tag {
+    font-size: 0.85em;
+    color: #888;
+    background-color: var(--secondary-color);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+
+/* --- Bottom Section: Bio Box (Long Rectangle) --- */
+.creator-bio-box {
+    text-align: left;
+    padding: 15px 0 0;
+}
+
+.bio-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.bio-content {
+    font-size: 0.95em;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.social-links-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Default Icon Button Styling */
+.social-links-bar .social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--secondary-color); /* Light gray background */
+    color: var(--text-color); /* Dark icon color */
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect: use the accent color */
+.social-links-bar .social-btn:hover {
+    background-color: var(--accent-color); /* Teal fill */
+    color: var(--light-text); /* White icon */
+    transform: translateY(-2px);
+}
+
+/* Portfolio Button (Text Button - Larger) */
+.social-links-bar .portfolio-btn {
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    padding: 6px 15px;
+    font-size: 0.9em;
+    font-weight: 600;
+    background-color: var(--accent-color); /* Teal background by default */
+    color: var(--light-text); /* White text */
+}
+
+/* Hover effect for the Portfolio button (subtle shift) */
+.social-links-bar .portfolio-btn:hover {
+    background-color: #c1c1c1; /* Darker teal */
+    color: black;
+    transform: translateY(-2px);
+}
+
+
+.join-team-cta {
+    text-align: center;
+    padding: 70px 40px;
+    margin-top: -20px;
+    margin-bottom: 70px;
+    background-color: var(--secondary-color); /* Light gray background */
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.20);
+}
+
+.join-team-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 4rem);
+    color: var(--text-color);
+    font-weight: 800;
+    margin-bottom: -30px;
+}
+
+.interest-form-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.interest-prompt {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+
+.interest-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.interest-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    font-size: 1em;
+    max-width: 300px;
+}
+
+.submit-interest-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: 2px solid black;
+    border-radius: 10px;
+    white-space: nowrap; /* Prevent button text from wrapping */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.submit-interest-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Mobile Adjustments for Form */
+@media (max-width: 600px) {
+    .interest-form {
+        flex-direction: column;
+    }
+    .interest-input {
+        max-width: 100%;
+        width: 100%;
+    }
+    .submit-interest-btn {
+        width: 100%;
+    }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+    .creators-grid-wrapper {
+        /* Changes to 1 column on tablet/mobile */
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 500px) {
+    .creator-top-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    .creator-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .creator-metadata {
+        text-align: center;
+    }
+}
